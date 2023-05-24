@@ -11,6 +11,11 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static("public"));
 
+// Default route that serves the homepage
+app.get("*", (req, res) =>
+  res.sendFile(path.join(__dirname, "public/index.html"))
+);
+
 // Route for serving the notes page
 app.get("/notes", (req, res) => {
   res.sendFile(path.join(__dirname, "public/notes.html"));
@@ -70,11 +75,6 @@ app.delete("/api/notes/:id", (req, res) => {
 
   res.status(200).json(response);
 });
-
-// Default route that serves the homepage
-app.get("*", (req, res) =>
-  res.sendFile(path.join(__dirname, "public/index.html"))
-);
 
 app.listen(PORT, () =>
   console.log(`App is running and listening on http://localhost:${PORT}`)

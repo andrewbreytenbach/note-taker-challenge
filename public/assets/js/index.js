@@ -84,7 +84,6 @@ const handleNoteSave = () => {
 };
 
 // Handle the delete note button click event
-
 const handleNoteDelete = (e) => {
   e.stopPropagation();
 
