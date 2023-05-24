@@ -14,13 +14,13 @@ if (window.location.pathname === "/notes") {
 }
 
 // Show an element
-const show = (elem) => {
-  elem.style.display = "inline";
+const show = (element) => {
+  element.style.display = "inline";
 };
 
 // Hide an element
-const hide = (elem) => {
-  elem.style.display = "none";
+const hide = (element) => {
+  element.style.display = "none";
 };
 
 // activeNote is used to keep track of the note in the textarea
@@ -183,6 +183,11 @@ const getAndRenderNotes = () => getNotes().then(renderNoteList);
 
 // Attach event listeners if the current page is the "notes" page
 if (window.location.pathname === "/notes") {
+  const deleteNoteButtons = document.querySelectorAll(".delete-note");
+  deleteNoteButtons.forEach((button) => {
+    button.addEventListener("click", handleNoteDelete);
+  });
+
   saveNoteBtn.addEventListener("click", handleNoteSave);
   newNoteBtn.addEventListener("click", handleNewNoteView);
   noteTitle.addEventListener("keyup", handleRenderSaveBtn);
