@@ -23,7 +23,7 @@ To get started with the Note Taker App, follow these steps:
 2. Change to the project directory: cd notetaker-app
 3. Install dependencies: npm install
 4. Start the server: npm start
-5. Open your web browser and navigate to http://localhost:3000/
+5. Open your web browser and navigate to http://localhost:3001/
 
 ![Launch Page](/images/Screenshot%202023-04-11%20at%2015.14.20.png "Launch Page")
 
