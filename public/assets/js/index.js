@@ -87,10 +87,10 @@ const handleNoteSave = () => {
 const handleNoteDelete = (e) => {
   e.stopPropagation();
 
-  const noteElement = e.target.parentElement;
-  const noteId = JSON.parse(noteElement.getAttribute("data-note")).note_id;
+  const note = e.target.parentElement;
+  const noteId = JSON.parse(note.getAttribute("data-note")).id;
 
-  if (activeNote.note_id === noteId) {
+  if (activeNote.id === noteId) {
     activeNote = {};
   }
 
