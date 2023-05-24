@@ -3,7 +3,7 @@ const app = express();
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const fs = require("fs");
-const uniqid = require("uniqid");
+const { v4: uuidv4 } = require('uuid'); // Added import for UUID generation
 const notesData = require("./db/db.json");
 
 app.use(express.json());
@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 // Default route that serves the homepage
-app.get("*", (req, res) =>
+app.get("/", (req, res) =>
   res.sendFile(path.join(__dirname, "public/index.html"))
 );
 
@@ -29,14 +29,14 @@ app.post("/api/notes", (req, res) => {
   const { title, text } = req.body;
 
   const newNote = {
-    id: uniqid(),
+    id: uuidv4(), // Generate a new UUID for the note
     title,
     text,
   };
 
   notesData.push(newNote);
 
-  fs.writeFile("./db/db.json", JSON.stringify(notesData, null, 4), (writeErr) =>
+  fs.writeFile(path.join(__dirname, "db/db.json"), JSON.stringify(notesData, null, 4), (writeErr) =>
     writeErr
       ? console.error(writeErr)
       : console.info("The note has been saved")
@@ -62,7 +62,7 @@ app.delete("/api/notes/:id", (req, res) => {
 
   notesData.splice(notesData.indexOf(deletedNote), 1);
 
-  fs.writeFile("./db/db.json", JSON.stringify(notesData, null, 4), (writeErr) =>
+  fs.writeFile(path.join(__dirname, "db/db.json"), JSON.stringify(notesData, null, 4), (writeErr) =>
     writeErr
       ? console.error(writeErr)
       : console.info("The note has been deleted")

@@ -50,8 +50,8 @@ The Note Taker App has the following API routes:
 The Note Taker App uses Jest for running unit tests. To run tests, run the following command: npm test
 
 ## Contact
-* [https://github.com/andrewbreytenbach](Andrew Breytenbach)
-* Project Link: [https://note-taker-challenge-expressjs.herokuapp.com/](Note Taker Challenge)
+* [https://github.com/andrewbreytenbach] (Andrew Breytenbach)
+* Project Link: [https://note-taker-challenge-expressjs.herokuapp.com/] (Note Taker Challenge)
 
 ## Acknowledgements
 * [https://nodejs.org/] (Node.js)
@@ -60,6 +60,8 @@ The Note Taker App uses Jest for running unit tests. To run tests, run the follo
 * [https://heroku.com/] (Heroku)
 * [https://getbootstrap.com/] (Bootstrap)
 * [https://github.com/coding-boot-camp/miniature-eureka] (Starter Code)
+* [https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API] (Fetch API)
+* [https://developer.mozilla.org/en-US/docs/Web/API] (Web APIs)
 
 
 
