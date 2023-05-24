@@ -84,15 +84,14 @@ const handleNoteSave = () => {
 };
 
 // Handle the delete note button click event
+
 const handleNoteDelete = (e) => {
   e.stopPropagation();
 
-  const note = e.target;
-  const noteId = JSON.parse(
-    note.parentElement.getAttribute("data-note")
-  ).note_id;
+  const note = e.target.parentElement;
+  const noteId = JSON.parse(note.getAttribute("data-note")).id;
 
-  if (activeNote.note_id === noteId) {
+  if (activeNote.id === noteId) {
     activeNote = {};
   }
 
@@ -101,6 +100,7 @@ const handleNoteDelete = (e) => {
     renderActiveNote();
   });
 };
+
 
 // Handle the note view event
 const handleNoteView = (e) => {

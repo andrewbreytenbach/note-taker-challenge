@@ -34,7 +34,7 @@ app.post("/api/notes", (req, res) => {
   fs.writeFile("./db/db.json", JSON.stringify(notesData, null, 4), (writeErr) =>
     writeErr
       ? console.error(writeErr)
-      : console.info("Note saved successfully!")
+      : console.info("The note has been saved")
   );
 
   const response = {
@@ -60,7 +60,7 @@ app.delete("/api/notes/:id", (req, res) => {
   fs.writeFile("./db/db.json", JSON.stringify(notesData, null, 4), (writeErr) =>
     writeErr
       ? console.error(writeErr)
-      : console.info("Note deleted successfully!")
+      : console.info("The note has been deleted")
   );
 
   const response = {
